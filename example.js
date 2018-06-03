@@ -1,12 +1,15 @@
-var mautic = require('mautic-api-node');
-var request = require('request');
+const MauticAPI = require('mautic-api-node').default;
+const request = require('request');
 
-mautic.config.base_url = "https://example.mautic.com";
-mautic.config.redirect_uri = "https://www.mautic.com";
-mautic.config.public_key = "EXAMPLE_PUBLIC_KEY";
-mautic.config.secret_key = "EXAMPLE_SECRET_KEY";
-mautic.config.state = "RANDOM_STATE";
-mautic.config.api_endpoint = "https://example.mautic.com/api";
+const mautic = new MauticAPI({
+	base_url: "https://example.mautic.com",
+	redirect_uri: "https://www.mautic.com",
+	public_key: "EXAMPLE_PUBLIC_KEY",
+	secret_key: "EXAMPLE_SECRET_KEY",
+	state: "RANDOM_STATE",
+	code: "",
+	api_endpoint: "https://example.mautic.com/api",
+});
 
 
 var logResult = function (asset) {
